@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>My Blog</title>
-
+    <title>{{ post.blog_title }}</title>
     <!-- Bootstrap core CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
@@ -52,17 +51,15 @@
 	</nav>
 </header>
 
-<main class="ps-3">
-<h1 class="pt-5 pb-5">Recent posts</h1>
-{% for post in posts.all %}
-<a href="{% url 'specific_post' post.id %}"><h2>{{ post.blog_title}}</h2></a>
+<main class="ps-3 pt-5">
+<h2>{{ post.blog_title}}</h2>
 <br/>
-<img src="{{ post.blog_image.url}}" height="300" width="500">
+<img src="{{ post.blog_image.url}}" height="400" width="600">
 <br>
-<p>{{ post.get_summary}}</p>
+<p>{{ post.blog_text}}</p>
 <p>{{ post.blog_date}}</p>
 <br>
-{% endfor %}
+
 </main>
 
 

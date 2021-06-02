@@ -7,3 +7,9 @@ class Blog(models.Model):
 	blog_text = models.TextField()
 	blog_title = models.CharField(max_length=300)
 	blog_date = models.DateTimeField()
+
+	def get_summary(self):
+		return self.blog_text[:70]
+
+	def __str__(self):
+		return self.blog_title
